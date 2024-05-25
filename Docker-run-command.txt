@@ -1,0 +1,5 @@
+#!/bin/bash
+#Pull the latest version of the image
+
+docker pull DanSulami/WorldOfGames:latest
+docker compose up

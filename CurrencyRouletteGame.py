@@ -1,17 +1,18 @@
-import requests
-from forex_python.converter import CurrencyRates
 import random
+import requests
 
 
 def get_money_interval(levelOfDifficulty):
 
-    CurrencyRatesResult = CurrencyRates()
-    CurrencyRatesResult = CurrencyRatesResult.get_rate('ILS', 'USD')
+    url = 'https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_TNiDt8sUfzUFPCjfvRnXbT7tnMa7ESG9QPvBKErl&currencies=ILS'
+    response = requests.get(url)
+    currency_rate_json = response.json()
+    CurrencyRatesResult = currency_rate_json['data']['ILS']
 
     randomNumberResult = random.randint(1, 100)
     print(f'{randomNumberResult} is the amount USD, what do you think will be the value of current currency rate from USD to ILS?')
-    lowRange = (randomNumberResult-(5-levelOfDifficulty))/CurrencyRatesResult
-    HighRange = (randomNumberResult+(5-levelOfDifficulty))/CurrencyRatesResult
+    lowRange = (randomNumberResult-(5-levelOfDifficulty))*CurrencyRatesResult
+    HighRange = (randomNumberResult+(5-levelOfDifficulty))*CurrencyRatesResult
     return lowRange, HighRange
 
 
