@@ -1,8 +1,8 @@
 pipeline {
-        stage('Checkout') {
-            steps {
-                script {
-                    git branch: 'main', url: 'https://github.com/DanSulami7/WorldOfGames.git'
+    stage('Checkout') {
+        steps {
+            script {
+                git branch: 'main', url: 'https://github.com/DanSulami7/WorldOfGames.git'
                 }
             }
         }
