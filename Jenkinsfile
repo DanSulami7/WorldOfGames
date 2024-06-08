@@ -21,5 +21,11 @@ pipeline {
                 sh 'docker run my_image_name'
             }
         }
+
+         stage('Test') {
+            steps {
+                sh 'python Test\e2e.py'
+            }
+        }
     }
 }
