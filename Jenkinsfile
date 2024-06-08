@@ -15,5 +15,11 @@ pipeline {
                 sh 'docker build -t my_image_name .'
             }
         }
+
+        stage('Run') {
+            steps {
+                sh 'docker run my_image_name'
+            }
+        }
     }
 }
