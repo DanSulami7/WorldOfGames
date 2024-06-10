@@ -6,9 +6,7 @@ Introduction
 Prerequisites
 Installation
 Usage
-Configuration
-Contributing
-License
+
 
 Introduction:
 This project includes scripts and configuration files for setting up CI/CD pipelines using Jenkins and Docker. It automates the build, test, and deployment processes to ensure efficient and reliable releases.
@@ -34,28 +32,6 @@ Usage:
 a.Commit changes to your branch.
 b.Push the branch to the repository.
 c.Jenkins will automatically build, test, and deploy your changes based on the configured pipeline.
-
-
-Configuration:
-Environment Variables:
-
-DATABASE_URL: URL for the database connection.
-API_KEY: API key for third-party services.
-Configuration Files:
-config.yml: Main configuration file for the application.
-
-
-Contributing:
-Fork the repository.
-Create your feature branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -am 'Add some feature').
-Push to the branch (git push origin feature/your-feature).
-Create a new Pull Request.
-
-License:
-This project is licensed under the MIT License - see the LICENSE file for details.
-Feel free to adjust this template to fit the specifics of your project.
-
 
 
 
