@@ -4,8 +4,10 @@ import re
 import sys
 
 def main_function():
-    url = "http://127.0.0.1:5001/Game"
+    # url = "http://127.0.0.1:5001/Game"
+    url = "http://localhost:8777/Game"
     test_result = test_scores_service(url)
+    driver.quit()
 
     if test_result:
         print("Test passed.")

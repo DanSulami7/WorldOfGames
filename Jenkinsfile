@@ -8,23 +8,25 @@ pipeline {
                 }
             }
         }
-
         stage('Docker Build') {
             steps {
-                sh 'docker build -t my_image_name .'
+                sh 'docker build -t world_of_games_image .'
             }
         }
-
-        stage('Run') {
-            steps {
-                sh 'docker run my_image_name'
-            }
+        stage('Test') {
+            parallel(
+                run: {
+                    bat 'docker run -p 8777:5001 --name wog_container world_of_games_image'
+                },
+                test: {
+                    bat 'python tests/e2e.py'
+                    bat 'docker stop wog_container'
+                }
+            )
         }
-
-         stage('Test') {
-            steps {
-                sh 'python Tests/e2e.py'
-            }
+        stage('Push'){
+            bat 'docker tag world_of_games_image shanimarco/world_of_games'
+            bat 'docker push shanimarco/world_of_games'
         }
     }
 }
