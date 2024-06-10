@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker tag world_of_games_image DanSulami7/world_of_games'
-                sh 'docker push DanSulami7/world_of_games'
+                sh 'docker tag world_of_games_image dansulami/world_of_games'
+                sh 'docker push dansulami/world_of_games'
             }
         }
     }
