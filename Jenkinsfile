@@ -27,6 +27,7 @@ pipeline {
                     post {
                         always {
                             sh 'docker stop wog_container'
+                            sh 'docker rm wog_container'
                         }
                     }
                 }
