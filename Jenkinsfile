@@ -22,12 +22,11 @@ pipeline {
                 }
                 stage('Run Tests') {
                     steps {
-                        sh 'docker exec wog_container python Tests/e2e.py'
+                        sh 'python Tests/e2e.py'
                     }
                     post {
                         always {
                             sh 'docker stop wog_container'
-                            sh 'docker rm wog_container'
                         }
                     }
                 }
